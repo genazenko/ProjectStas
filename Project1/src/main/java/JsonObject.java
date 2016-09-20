@@ -49,4 +49,13 @@ public class JsonObject {
     public void setSkills(List<String> skills) {
         this.skills = skills;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+        str.append("Name: "+name+"; Age: "+age+"; Position: "+position+"; Salary: "+salary+"; Skills:");
+        for (int i=0; i<skills.size(); i++)
+            str.append(" "+skills.get(i));
+        return str.toString();
+    }
 }

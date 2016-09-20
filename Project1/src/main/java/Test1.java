@@ -15,12 +15,11 @@ public class Test1 {
 //JSON from file to Object
         try {
             obj = mapper.readValue(new File("E:\\ProjectStas\\Project1\\src\\main\\resources\\input.json"), JsonObject.class);
+            Logger logger = LoggerFactory.getLogger("Logger1");
+            logger.debug("Object: {}", obj);
             mapper.writeValue(new File("E:\\ProjectStas\\Project1\\src\\main\\resources\\output.json"), obj);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Logger logger = LoggerFactory.getLogger("Logger1");
-        LogObject.logging(logger, obj);
-        //JsonObject obj = mapper.readValue(jsonInString, JsonObject.class);
     }
 }
