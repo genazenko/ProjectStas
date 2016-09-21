@@ -1,8 +1,8 @@
-import java.util.List;
+package by.bsu.zenko.model;
 
-/**
- * Created by 123 on 20.09.2016.
- */
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class JsonObject {
     private String name;
     private int age;
@@ -53,9 +53,11 @@ public class JsonObject {
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
-        str.append("Name: "+name+"; Age: "+age+"; Position: "+position+"; Salary: "+salary+"; Skills:");
-        for (int i=0; i<skills.size(); i++)
-            str.append(" "+skills.get(i));
+        str.append("Name: ").append(name).append("; ");
+        str.append("Age: ").append(age).append("; ");
+        str.append("Position: ").append(position).append("; ");
+        str.append("Salary: ").append(salary).append("; ");
+        str.append("Skills: ").append(skills.stream().collect(Collectors.joining(", ")));
         return str.toString();
     }
 }
